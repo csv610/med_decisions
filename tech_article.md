@@ -69,7 +69,7 @@ Beyond the summary accuracy figures produced by [eval_decisions.py](file:///User
 
 ### 2.4 Dataset Provenance and Reproducibility
 
-As documented in [build_dataset.py](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/build_dataset.py), `med_decisions.json` is a synthetic medical decision benchmark compiled and validated from 41 specialty-specific modules under `data_catalog/`, enforcing 100 unique questions per specialty and an exact 40/40/20 (`true`/`false`/`uncertain`) split. The software dependencies specified in [requirements.txt](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/requirements.txt) are `ollama>=0.6.2`, `httpx>=0.28.1`, `numpy>=2.0.0`, and `matplotlib>=3.8.0`. For full reproducibility, we note that [eval_decisions.py](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/eval_decisions.py) and [evaluation_results.json](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/evaluation_results.json) do not log the underlying hardware specifications, exact Ollama server version, or model weight digest/quantization of `pplx-decider-flash`.
+As documented in [build_dataset.py](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/build_dataset.py), `med_decisions.json` is a synthetic medical decision benchmark compiled and validated from 41 specialty-specific modules under `data_catalog/`, enforcing 100 unique questions per specialty and an exact 40/40/20 (`true`/`false`/`uncertain`) split. The evaluation was executed locally on an **Apple Mac M1 machine with 16 GB unified memory**, using the software dependencies specified in [requirements.txt](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/requirements.txt) (`ollama>=0.6.2`, `httpx>=0.28.1`, `numpy>=2.0.0`, and `matplotlib>=3.8.0`). For full reproducibility, we note that [eval_decisions.py](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/eval_decisions.py) and [evaluation_results.json](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/evaluation_results.json) do not log the exact Ollama server version or the model weight digest/quantization of `pplx-decider-flash`.
 
 ---
 
@@ -112,47 +112,47 @@ To assess whether performance is uniform across clinical domains, Table 3 presen
 
 | Specialty | Accuracy (%) | `false` $\rightarrow$ `true` | `uncertain` Errors | Mean Top-1 Conf. |
 | :--- | :---: | :---: | :---: | :---: |
-| Clinical Nutrition & Obesity Medicine | 98.00 | 1 | 1 / 20 | 0.859 |
-| Urology | 98.00 | 1 | 1 / 20 | 0.872 |
-| Dermatology | 97.00 | 1 | 2 / 20 | 0.890 |
-| Physical Medicine & Rehabilitation | 97.00 | 0 | 0 / 20 | 0.841 |
-| Reproductive Medicine & Infertility | 97.00 | 1 | 0 / 20 | 0.872 |
-| Rheumatology | 97.00 | 2 | 1 / 20 | 0.875 |
-| Ophthalmology | 96.00 | 0 | 2 / 20 | 0.863 |
-| Clinical Pharmacology & Medication Safety | 95.00 | 2 | 2 / 20 | 0.855 |
-| Oral & Maxillofacial Surgery & Dentistry | 95.00 | 0 | 2 / 20 | 0.835 |
-| Orthopedics | 95.00 | 0 | 3 / 20 | 0.864 |
-| Geriatrics | 94.00 | 0 | 2 / 20 | 0.830 |
-| Infectious Diseases | 94.00 | 1 | 5 / 20 | 0.876 |
-| Sleep Medicine | 94.00 | 0 | 2 / 20 | 0.807 |
+| Allergy & Clinical Immunology | 87.00 | 1 | 9 / 20 | 0.843 |
 | Anesthesiology & Pain Medicine | 93.00 | 2 | 0 / 20 | 0.812 |
 | Cardiology | 93.00 | 2 | 2 / 20 | 0.831 |
-| Endocrinology | 93.00 | 0 | 6 / 20 | 0.874 |
-| General Surgery | 93.00 | 0 | 6 / 20 | 0.859 |
-| Hematology | 93.00 | 3 | 4 / 20 | 0.842 |
-| Obstetrics & Gynecology | 93.00 | 2 | 2 / 20 | 0.845 |
-| Otolaryngology (ENT) | 93.00 | 1 | 5 / 20 | 0.848 |
-| Pediatrics | 93.00 | 1 | 4 / 20 | 0.871 |
-| Psychiatry | 93.00 | 0 | 7 / 20 | 0.884 |
-| Pulmonology | 93.00 | 1 | 5 / 20 | 0.857 |
-| Gastroenterology | 92.00 | 0 | 4 / 20 | 0.850 |
-| Plastic & Reconstructive Surgery | 92.00 | 3 | 4 / 20 | 0.820 |
-| Radiation Oncology & Nuclear Medicine | 92.00 | 0 | 5 / 20 | 0.811 |
-| Occupational, Environmental & Travel Medicine | 91.00 | 1 | 7 / 20 | 0.863 |
-| Transplant Medicine | 91.00 | 2 | 4 / 20 | 0.809 |
-| Vascular & Cardiothoracic Surgery | 91.00 | 0 | 5 / 20 | 0.814 |
-| Neurosurgery | 90.00 | 0 | 5 / 20 | 0.837 |
-| Oncology | 90.00 | 0 | 6 / 20 | 0.865 |
-| Radiology & Diagnostic Imaging | 90.00 | 4 | 6 / 20 | 0.801 |
+| Clinical Nutrition & Obesity Medicine | 98.00 | 1 | 1 / 20 | 0.859 |
+| Clinical Pharmacology & Medication Safety | 95.00 | 2 | 2 / 20 | 0.855 |
+| Critical Care & Intensive Care Medicine | 86.00 | 1 | 5 / 20 | 0.800 |
+| Dermatology | 97.00 | 1 | 2 / 20 | 0.890 |
 | Emergency Medicine & Acute Toxicology | 89.00 | 0 | 11 / 20 | 0.897 |
-| Neurology | 89.00 | 1 | 10 / 20 | 0.860 |
-| Allergy & Clinical Immunology | 87.00 | 1 | 9 / 20 | 0.843 |
+| Endocrinology | 93.00 | 0 | 6 / 20 | 0.874 |
 | Family Medicine & Preventive Care | 87.00 | 3 | 5 / 20 | 0.814 |
+| Gastroenterology | 92.00 | 0 | 4 / 20 | 0.850 |
+| General Surgery | 93.00 | 0 | 6 / 20 | 0.859 |
+| Geriatrics | 94.00 | 0 | 2 / 20 | 0.830 |
+| Hematology | 93.00 | 3 | 4 / 20 | 0.842 |
+| Infectious Diseases | 94.00 | 1 | 5 / 20 | 0.876 |
 | Medical Genetics & Genomics | 87.00 | 1 | 12 / 20 | 0.862 |
 | Nephrology | 87.00 | 2 | 10 / 20 | 0.853 |
-| Pathology & Laboratory Medicine | 87.00 | 4 | 8 / 20 | 0.825 |
-| Critical Care & Intensive Care Medicine | 86.00 | 1 | 5 / 20 | 0.800 |
+| Neurology | 89.00 | 1 | 10 / 20 | 0.860 |
+| Neurosurgery | 90.00 | 0 | 5 / 20 | 0.837 |
+| Obstetrics & Gynecology | 93.00 | 2 | 2 / 20 | 0.845 |
+| Occupational, Environmental & Travel Medicine | 91.00 | 1 | 7 / 20 | 0.863 |
+| Oncology | 90.00 | 0 | 6 / 20 | 0.865 |
+| Ophthalmology | 96.00 | 0 | 2 / 20 | 0.863 |
+| Oral & Maxillofacial Surgery & Dentistry | 95.00 | 0 | 2 / 20 | 0.835 |
+| Orthopedics | 95.00 | 0 | 3 / 20 | 0.864 |
+| Otolaryngology (ENT) | 93.00 | 1 | 5 / 20 | 0.848 |
 | Palliative & Supportive Care | 85.00 | 3 | 6 / 20 | 0.778 |
+| Pathology & Laboratory Medicine | 87.00 | 4 | 8 / 20 | 0.825 |
+| Pediatrics | 93.00 | 1 | 4 / 20 | 0.871 |
+| Physical Medicine & Rehabilitation | 97.00 | 0 | 0 / 20 | 0.841 |
+| Plastic & Reconstructive Surgery | 92.00 | 3 | 4 / 20 | 0.820 |
+| Psychiatry | 93.00 | 0 | 7 / 20 | 0.884 |
+| Pulmonology | 93.00 | 1 | 5 / 20 | 0.857 |
+| Radiation Oncology & Nuclear Medicine | 92.00 | 0 | 5 / 20 | 0.811 |
+| Radiology & Diagnostic Imaging | 90.00 | 4 | 6 / 20 | 0.801 |
+| Reproductive Medicine & Infertility | 97.00 | 1 | 0 / 20 | 0.872 |
+| Rheumatology | 97.00 | 2 | 1 / 20 | 0.875 |
+| Sleep Medicine | 94.00 | 0 | 2 / 20 | 0.807 |
+| Transplant Medicine | 91.00 | 2 | 4 / 20 | 0.809 |
+| Urology | 98.00 | 1 | 1 / 20 | 0.872 |
+| Vascular & Cardiothoracic Surgery | 91.00 | 0 | 5 / 20 | 0.814 |
 
 ### 4.1 Domain-Level Observations
 
@@ -226,7 +226,7 @@ Table 6 illustrates a steep risk-coverage trade-off:
 
 ## 6. Inference Latency and Operational Profile
 
-Total sequential execution time across all 4,100 queries in [evaluation_results.json](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/evaluation_results.json) was **4,298.16 s** (71.64 minutes). Table 7 summarizes the per-query latency distribution.
+Total sequential execution time across all 4,100 queries in [evaluation_results.json](file:///Users/csv610/Projects/MyBooks/Medical/DecisionModels/evaluation_results.json) on the **Mac M1 (16 GB)** machine was **4,298.16 s** (71.64 minutes). Table 7 summarizes the per-query latency distribution.
 
 | Statistic | Latency (seconds) |
 | :--- | :---: |
