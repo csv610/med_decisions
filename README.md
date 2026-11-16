@@ -29,6 +29,52 @@ Evaluated sequentially on all 4,100 items in `med_decisions.json` (`40% true`, `
 - **Confidence-Gated Selective Prediction**: Predictions with top-1 confidence $\ge 0.90$ cover **50.24%** of queries (2,060 / 4,100) at **99.56% accuracy** (1 `false` $\rightarrow$ `true` error). At $\ge 0.95$, coverage is **30.05%** (1,232 / 4,100) at **99.84% accuracy** with **0** `false` $\rightarrow$ `true` errors.
 - **Safety Caveat**: Unassisted deployment yields 320 errors, including 47 `false` $\rightarrow$ `true` endorsements and 186 missed `uncertain` items. This benchmark and model are intended for research and confidence-gated triage analysis only, not autonomous clinical decision-making.
 
+### Accuracy by Medical Specialty
+
+| Specialty | Correct / Total | Accuracy |
+| :--- | :---: | :---: |
+| Clinical Nutrition & Obesity Medicine | 98 / 100 | 98.00% |
+| Urology | 98 / 100 | 98.00% |
+| Dermatology | 97 / 100 | 97.00% |
+| Physical Medicine & Rehabilitation | 97 / 100 | 97.00% |
+| Reproductive Medicine & Infertility | 97 / 100 | 97.00% |
+| Rheumatology | 97 / 100 | 97.00% |
+| Ophthalmology | 96 / 100 | 96.00% |
+| Clinical Pharmacology & Medication Safety | 95 / 100 | 95.00% |
+| Oral & Maxillofacial Surgery & Dentistry | 95 / 100 | 95.00% |
+| Orthopedics | 95 / 100 | 95.00% |
+| Geriatrics | 94 / 100 | 94.00% |
+| Infectious Diseases | 94 / 100 | 94.00% |
+| Sleep Medicine | 94 / 100 | 94.00% |
+| Anesthesiology & Pain Medicine | 93 / 100 | 93.00% |
+| Cardiology | 93 / 100 | 93.00% |
+| Endocrinology | 93 / 100 | 93.00% |
+| General Surgery | 93 / 100 | 93.00% |
+| Hematology | 93 / 100 | 93.00% |
+| Obstetrics & Gynecology | 93 / 100 | 93.00% |
+| Otolaryngology (ENT) | 93 / 100 | 93.00% |
+| Pediatrics | 93 / 100 | 93.00% |
+| Psychiatry | 93 / 100 | 93.00% |
+| Pulmonology | 93 / 100 | 93.00% |
+| Gastroenterology | 92 / 100 | 92.00% |
+| Plastic & Reconstructive Surgery | 92 / 100 | 92.00% |
+| Radiation Oncology & Nuclear Medicine | 92 / 100 | 92.00% |
+| Occupational, Environmental & Travel Medicine | 91 / 100 | 91.00% |
+| Transplant Medicine | 91 / 100 | 91.00% |
+| Vascular & Cardiothoracic Surgery | 91 / 100 | 91.00% |
+| Neurosurgery | 90 / 100 | 90.00% |
+| Oncology | 90 / 100 | 90.00% |
+| Radiology & Diagnostic Imaging | 90 / 100 | 90.00% |
+| Emergency Medicine & Acute Toxicology | 89 / 100 | 89.00% |
+| Neurology | 89 / 100 | 89.00% |
+| Allergy & Clinical Immunology | 87 / 100 | 87.00% |
+| Family Medicine & Preventive Care | 87 / 100 | 87.00% |
+| Medical Genetics & Genomics | 87 / 100 | 87.00% |
+| Nephrology | 87 / 100 | 87.00% |
+| Pathology & Laboratory Medicine | 87 / 100 | 87.00% |
+| Critical Care & Intensive Care Medicine | 86 / 100 | 86.00% |
+| Palliative & Supportive Care | 85 / 100 | 85.00% |
+
 ---
 
 ## Repository Structure
